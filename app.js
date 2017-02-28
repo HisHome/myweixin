@@ -13,17 +13,38 @@ var app = express();
 var exphbs = require('express-handlebars');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+// var hbs = exphbs.create({
+//   helpers: {
+//     if: function(conditional, options) {
+//       if (conditional) {
+//         return options.fn(this);
+//       } else {
+//         return options.inverse(this);
+//       }
+//     }
+//   }
+// });
+// app.engine("hbs", hbs.engine);
+// app.set('view engine', 'hbs');
 
-app.engine('hbs',exphbs({
-   layoutsDir:'views',
-   defaultLayout:'layout',
-   extname:'.hbs',
-}));
+// app.engine('hbs', exphbs({
+//     layoutsDir: "views",
+//     defaultLayout: 'layout',
+//     extname: '.hbs'
+// }));
+// app.set('view engine', 'hbs');
+
+var hbs = exphbs.create({
+    layoutsDir: "views",
+    defaultLayout: 'layout',
+    extname: '.hbs'
+});
+app.engine("hbs", hbs.engine);
 app.set('view engine', 'hbs');
+
 // uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+// app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
