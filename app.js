@@ -8,10 +8,9 @@ var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
 
-var exphbs = require('express-handlebars');
-
 var app = express();
 
+var exphbs = require('express-handlebars');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
@@ -19,8 +18,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.engine('hbs',exphbs({
    layoutsDir:'views',
    defaultLayout:'layout',
-   extname:'.hbs'
-}))
+   extname:'.hbs',
+}));
 app.set('view engine', 'hbs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
