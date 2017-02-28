@@ -1,9 +1,10 @@
 {
   "name": "myweixin",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+     "local": "NODE_ENV=local node ./bin/www",
+     "start": "node ./bin/www",
   },
   "dependencies": {
     "body-parser": "~1.15.2",
