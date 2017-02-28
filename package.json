@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
      "local": "NODE_ENV=local supervisor ./bin/www",
-     "start": "node ./bin/www"
+     "start": "NODE_ENV=local ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
